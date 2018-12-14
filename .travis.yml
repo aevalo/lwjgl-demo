@@ -10,11 +10,10 @@ cache:
     - $HOME/.gradle/wrapper/
 deploy:
   provider: releases
-  api_key:
-    secure: YOUR_API_KEY_ENCRYPTED
+  api_key: $GITHUB_OAUTH_TOKEN
   file:
-    - build/distributions/lwjgl-demo-0.1.tgz
-    - build/distributions/lwjgl-demo-0.1.zip
+    - build/distributions/lwjgl-demo-0.1-1.tgz
+    - build/distributions/lwjgl-demo-0.1-1.zip
   skip_cleanup: true
   on:
     branch: master

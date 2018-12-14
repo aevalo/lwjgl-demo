@@ -50,7 +50,7 @@ dependencies {
 
 sourceCompatibility = '1.8'
 targetCompatibility = '1.8'
-version = '0.1'
+version = '0.1-1'
 mainClassName = "HelloWorld"
 
 // Add compression for the .tar distribution
