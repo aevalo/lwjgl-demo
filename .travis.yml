@@ -1,0 +1,21 @@
+language: java
+install: ./gradlew assemble
+script: ./gradlew check
+before_cache:
+  - rm -f  $HOME/.gradle/caches/modules-2/modules-2.lock
+  - rm -fr $HOME/.gradle/caches/*/plugin-resolution/
+cache:
+  directories:
+    - $HOME/.gradle/caches/
+    - $HOME/.gradle/wrapper/
+deploy:
+  provider: releases
+  api_key:
+    secure: YOUR_API_KEY_ENCRYPTED
+  file:
+    - build/distributions/lwjgl-demo-0.1.tgz
+    - build/distributions/lwjgl-demo-0.1.zip
+  skip_cleanup: true
+  on:
+    branch: master
+    tags: true
